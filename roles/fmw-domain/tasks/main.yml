@@ -24,10 +24,10 @@
   template: src=create-domain.py dest={{ mw_installer_folder }} owner={{ oracle_user }} group={{ oracle_group }}
   tags:
     - create-domain
-- name: Execute create domain script
-  shell: "{{ weblogic_home }}/common/bin/wlst.sh {{ mw_installer_folder }}/create-domain.py"
-  tags:
-    - create-domain
+#- name: Execute create domain script
+#  shell: "{{ weblogic_home }}/common/bin/wlst.sh {{ mw_installer_folder }}/create-domain.py"
+#  tags:
+#    - create-domain
 
 # ==> Create Environment Variables for Oracle user
 #- name: Creates new .bashrc file with system variables
