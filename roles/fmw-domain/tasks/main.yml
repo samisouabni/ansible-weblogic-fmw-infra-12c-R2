@@ -17,8 +17,8 @@
   
 - name: Copy Files
   copy:
-    src: {{ mw_installer_folder }}/rcuHome
-    dest: {{ middleware_common_home }}/
+    src: '{{ mw_installer_folder }}/rcuHome'
+    dest: '{{ middleware_common_home }}/'
   
 # ==> Create Repository in Database
 - name: password response file for repository creation
