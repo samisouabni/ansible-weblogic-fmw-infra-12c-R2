@@ -13,7 +13,7 @@
   become_user: root
   
 - name: Copy Files
-  command: "cp {{ mw_installer_folder }}/rcuHome/* {{ middleware_common_home }} -rf"
+  command: "cp {{ mw_installer_folder }}/rcuHome/ {{ middleware_common_home }} -rf"
   become_user: root
   
 - file:
