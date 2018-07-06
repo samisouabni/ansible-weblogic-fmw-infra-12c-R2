@@ -8,7 +8,7 @@
 - name: Create installer directory
   file: state=directory path={{ mw_installer_folder }}
 - name: Copy Middleware Installer
-  copy: src=/home/ansible/{{ mw_installer }} dest={{ mw_installer_folder }}
+  copy: src=/home/oracle_user/{{ mw_installer }} dest={{ mw_installer_folder }}
 - name: Copy file for silent installation
   template: src=silent-weblogic.txt dest={{ mw_installer_folder }}
 - name: Copy OraInst.loc
