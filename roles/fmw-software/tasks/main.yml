@@ -8,7 +8,7 @@
 - name: Create installer directory
   file: state=directory path={{ mw_installer_folder }}
 - name: Download installer
-  become: ansible
+  sudo: yes
   get_url:
     url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/fmw_12.2.1.3.0_infrastructure.jar"
     dest: "{{ mw_installer_folder }}/fmw_12.2.1.3.0_infrastructure.jar"
