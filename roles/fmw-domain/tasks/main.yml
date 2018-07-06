@@ -8,7 +8,7 @@
 - name: download file from a file path
   get_url:
     url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
-    dest: "{{ installation_folder }}/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
+    dest: "{{ mw_installer_folder }}/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
   become_user: root
 
 # ==> extract files
