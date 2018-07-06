@@ -28,9 +28,13 @@
       lineinfile: dest=/etc/hosts regexp='^127\.0\.0\.1' line='127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4' owner=root group=root mode=0644
     - name: download file from a file path
       get_url:
-        url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/fmw_12.2.1.3.0_wls.jar"
-        dest: /tmp/fmw_12.2.1.3.0_wls.jar
+        url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/fmw_12.2.1.3.0_infrastructure.jar"
+        dest: /tmp/fmw_12.2.1.3.0_infrastructure.jar
     - name: download file from a file path
       get_url:
         url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/rcu"
         dest: /tmp/rcu
+    - name: download file from a file path
+      get_url:
+        url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
+        dest: /tmp/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip
