@@ -29,4 +29,4 @@
     - name: download file from a file path
       get_url:
         url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/fmw_12.2.1.3.0_infrastructure.jar"
-        dest: ./fmw-software/files/fmw_12.2.1.3.0_infrastructure.jar
+        dest: ~/fmw_12.2.1.3.0_infrastructure.jar
