@@ -13,7 +13,12 @@
 
 # ==> extract files
 - name: Extract installation files
-  command: 'unzip {{ mw_installer_folder }}/{{ oraclecommon }} -d {{ mw_installer_folder }}/'
+  command: 'unzip {{ mw_installer_folder }}/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip -d {{ mw_installer_folder }}/'
+  
+- name: Copy Files
+  copy:
+    src: {{ mw_installer_folder }}/rcuHome
+    dest: {{ middleware_common_home }}/
   
 # ==> Create Repository in Database
 - name: password response file for repository creation
