@@ -8,7 +8,7 @@
   s3:
     bucket: dog-oracledb-files
     object: jdk-8u171-linux-x64.tar.gz
-    dest: {{ jdk_installation_archive }}
+    dest: "{{ jdk_installation_archive }}"
     mode: get
     overwrite: different
 - name: Copy jdk archive to host
