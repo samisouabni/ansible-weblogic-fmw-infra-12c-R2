@@ -9,6 +9,7 @@
   file: state=directory path={{ mw_installer_folder }}
 - name: Copy Middleware Installer
   copy: src=/tmp/{{ mw_installer }} dest={{ mw_installer_folder }}
+  become_user: root
 - name: Copy file for silent installation
   template: src=silent-weblogic.txt dest={{ mw_installer_folder }}/silent-weblogic.txt
 - name: Copy OraInst.loc
