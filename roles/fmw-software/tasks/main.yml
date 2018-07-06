@@ -17,6 +17,7 @@
     owner: "{{ oracle_user }}"
     group: "{{ oracle_group }}"
     mode: "u=rw,g=r,o=rwx"
+  become_user: root
 - name: Copy file for silent installation
   template: src=silent-weblogic.txt dest={{ mw_installer_folder }}
 - name: Copy OraInst.loc
