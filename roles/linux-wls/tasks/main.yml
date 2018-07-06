@@ -6,7 +6,7 @@
 ################################################################################
 - name: Include only main.yml
   include_vars:
-    dir: vars
+    dir: ../vars
     files_matching: main.yaml
     
 # ==> Configure Linux
