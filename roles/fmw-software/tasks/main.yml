@@ -13,7 +13,7 @@
     dest: "{{ mw_installer_folder }}/{{ mw_installer }}"
   become_user: root
 - file:
-    path: {{ mw_installer_folder }}/{{ mw_installer }}
+    path: "{{ mw_installer_folder }}/{{ mw_installer }}"
     owner: {{ oracle_user }} 
     group: {{ oracle_group }}
     mode: "u=rw,g=r,o=rwx"
