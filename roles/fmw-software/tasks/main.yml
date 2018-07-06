@@ -14,8 +14,8 @@
   become_user: root
 - file:
     path: "{{ mw_installer_folder }}/{{ mw_installer }}"
-    owner: {{ oracle_user }} 
-    group: {{ oracle_group }}
+    owner: "{{ oracle_user }}"
+    group: "{{ oracle_group }}"
     mode: "u=rw,g=r,o=rwx"
 - name: Copy file for silent installation
   template: src=silent-weblogic.txt dest={{ mw_installer_folder }}
