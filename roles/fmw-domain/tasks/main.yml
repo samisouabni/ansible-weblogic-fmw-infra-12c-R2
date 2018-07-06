@@ -13,9 +13,11 @@
   become_user: root
   
 - name: Copy Files
-  copy:
-    src: '{{ mw_installer_folder }}/rcuHome/'
-    dest: '{{ middleware_common_home }}/'
+  command: "copy {{ mw_installer_folder }}/rcuHome/* {{ middleware_common_home }} -rf"
+  become_user: root
+  
+- file:
+    path: "{{ middleware_common_home }}"
     owner: "{{ oracle_user }}"
     group: "{{ oracle_group }}"
     mode: "u=rw,g=r,o=rwx"
