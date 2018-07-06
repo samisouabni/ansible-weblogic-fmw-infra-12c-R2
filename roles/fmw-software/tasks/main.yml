@@ -13,5 +13,5 @@
 #  template: src=silent-weblogic.txt dest=/silent-weblogic.txt
 #- name: Copy OraInst.loc
 #  template: src=oraInst.loc dest=/oraInst.loc
-- name: execute Weblogic installer
-  command: "{{ jdk_folder }}/bin/java -Xms1024m -Xmx1024m -jar {{ mw_installer }} -silent -responseFile silent-weblogic.txt -invPtrLoc oraInst.loc"
+#- name: execute Weblogic installer
+#  command: "{{ jdk_folder }}/bin/java -Xms1024m -Xmx1024m -jar {{ mw_installer }} -silent -responseFile silent-weblogic.txt -invPtrLoc oraInst.loc"
