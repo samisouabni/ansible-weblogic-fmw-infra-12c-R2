@@ -5,15 +5,11 @@
 # ==> author: Christos Vezalis
 ################################################################################
 
-- name: download file from a file path
-  get_url:
-    url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
-    dest: "{{ mw_installer_folder }}/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
-  become_user: root
-
-# ==> extract files
-- name: Extract installation files
-  command: 'unzip {{ mw_installer_folder }}/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip -d {{ mw_installer_folder }}/'
+- name: Unarchive a file that needs to be downloaded (added in 2.0)
+  unarchive:
+    src: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
+    dest: '{{ mw_installer_folder }}'
+    remote_src: yes
   become_user: root
   
 - name: Copy Files
