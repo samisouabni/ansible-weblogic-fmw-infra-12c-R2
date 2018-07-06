@@ -14,7 +14,8 @@
   selinux: state=disabled
 - name: Change kernel parameters
   sysctl: name="{{ item.key }}" value="{{ item.value }}" state=present
-  with_dict: kernel_params
+  with_dict: 
+    "{{ kernel_params }}"
 
 # ==> Create user and groups
 - name: Create groups
