@@ -7,13 +7,9 @@
 - name: download file from a file path
   get_url:
     url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/jdk-8u171-linux-x64.tar.gz"
-    dest: "{{ jdk_installation_archive }}"
-- name: Copy jdk archive to host
-  copy: src={{ jdk_installation_archive }} dest=~/{{ jdk_installation_archive }}
-  args:
-    force: no
+    dest: "~/jdk-8u171-linux-x64.tar.gz"
 - name: Extract JDK archive
-  command: 'tar -xf ~/{{ jdk_installation_archive }} -C {{ oracle_base }}'
+  command: 'tar -xf ~/jdk-8u171-linux-x64.tar.gz -C {{ oracle_base }}'
   args:
     creates: "{{ jdk_folder }}"
 - name: Change ownership of jdk folder
