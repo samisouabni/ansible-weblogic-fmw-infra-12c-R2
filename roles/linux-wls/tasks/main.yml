@@ -44,7 +44,7 @@
 # ==> Configure Linux
 - name: Install required libraries
   yum: name={{ item }} state=present
-  with_items: packages_list
+  with_items: {{ packages_list }}
 - name: Disable SELinux
   selinux: state=disabled
 - name: Change kernel parameters
