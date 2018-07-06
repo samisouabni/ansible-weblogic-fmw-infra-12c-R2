@@ -6,7 +6,7 @@
 
 # ==> Install Fussion Middleware Infrastructure Software
 - name: Create installer directory
-  file: state=directory path={{ mw_installer_folder }}
+  file: state=directory path={{ mw_installer_folder }} mode="u=rwX,g=rwX,o=rwX"
 - name: Download installer
   sudo: yes
   get_url:
