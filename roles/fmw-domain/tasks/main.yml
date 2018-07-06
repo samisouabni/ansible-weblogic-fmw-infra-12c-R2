@@ -5,24 +5,24 @@
 # ==> author: Christos Vezalis
 ################################################################################
 
-- name: Unarchive a file that needs to be downloaded (added in 2.0)
-  unarchive:
-    src: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
-    dest: '{{ mw_installer_folder }}'
-    remote_src: yes
-  become_user: root
+#- name: Unarchive a file that needs to be downloaded (added in 2.0)
+#  unarchive:
+#    src: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/ofm_rcu_linux_11.1.1.9.0_64_disk1_1of1.zip"
+#    dest: '{{ mw_installer_folder }}'
+#    remote_src: yes
+#  become_user: root
   
-- name: Copy Files
-  command: "cp {{ mw_installer_folder }}/rcuHome/ {{ middleware_common_home }} -rf"
-  become_user: root
+#- name: Copy Files
+#  command: "cp {{ mw_installer_folder }}/rcuHome/ {{ middleware_common_home }} -rf"
+#  become_user: root
   
-- file:
-    path: "{{ middleware_common_home }}"
-    owner: "{{ oracle_user }}"
-    group: "{{ oracle_group }}"
-    mode: "u=rw,g=r,o=rwx"
-    remote_src: yes
-  become_user: root
+#- file:
+#    path: "{{ middleware_common_home }}"
+#    owner: "{{ oracle_user }}"
+#    group: "{{ oracle_group }}"
+#    mode: "u=rw,g=r,o=rwx"
+#    remote_src: yes
+#  become_user: root
   
 # ==> Create Repository in Database
 - name: password response file for repository creation
