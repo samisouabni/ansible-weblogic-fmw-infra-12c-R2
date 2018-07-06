@@ -1,1 +1,1 @@
-oracleweb ansible_ssh_host=ec2-18-184-208-166.eu-central-1.compute.amazonaws.com ansible_ssh_port=22
+weblogic ansible_ssh_host=ec2-18-184-208-166.eu-central-1.compute.amazonaws.com ansible_ssh_port=22
