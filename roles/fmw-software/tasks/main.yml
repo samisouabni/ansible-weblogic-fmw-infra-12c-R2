@@ -7,8 +7,11 @@
 # ==> Install Fussion Middleware Infrastructure Software
 - name: Create installer directory
   file: state=directory path={{ mw_installer_folder }}
-- name: Copy Middleware Installer
-  copy: src=/tmp/{{ mw_installer }} dest={{ mw_installer_folder }}
+- name: download file from a file path
+  get_url:
+    url: "https://s3.eu-central-1.amazonaws.com/dog-oracledb-files/{{ mw_installer }}"
+    dest: "{{ mw_installer_folder }}/{{ mw_installer }}"
+  become_user: root
 - name: Copy file for silent installation
   template: src=silent-weblogic.txt dest={{ mw_installer_folder }}/silent-weblogic.txt
 - name: Copy OraInst.loc
